@@ -10,7 +10,21 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+			let a = arr[0], b = arr[1];
+			for (let index = 2; index < arr.length; index++) {
+				let c = arr[index];
+			 let smallest = c < (a < b ? a : b) ? c : ((a < b) ? a : b);
+				if(smallest == c)
+					continue;
+				else if(smallest == b){
+					b = c;
+				}
+				else
+					a = c;
+			}
+			if(a < b)
+				return a;
+			return b;
 		}
 
 		function Main() {
